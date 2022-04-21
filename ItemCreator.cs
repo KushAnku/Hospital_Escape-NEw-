@@ -12,18 +12,20 @@ namespace Hospital_Escape
 
         public Item FactoryMethod(String item)
         {
+            item = item.ToLower();
             switch(item){
-                case "Heart machine":
-                    return new Item(item, 4f, 5f);     // f = float
-                case "Bp machine":
-                    return new Item(item, 2f, 2f);
-                case "Stethescope":
+                case "heart machine":
+                    return new Item("HeartMachine", 4f, 5f);     // f = float
+                case "bp machine":
+                    return new Item("BpMachine", 2f, 2f);
+                case "stethescope":
                     return new Item(item, 1f, 1f);
-                case "Defibrillator":
+                case "defibrillator":
                     return new Item(item, 2f, 2f);
-                case "Clipboard":
+                case "clipboard":
                     return new Item(item, 1f, 3f);
                 default:
+                    Console.WriteLine(item);
                     return null;
             }
         }

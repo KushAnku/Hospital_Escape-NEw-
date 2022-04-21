@@ -55,14 +55,14 @@ namespace Hospital_Escape
             Rooms HelpDesk = new Rooms("HelpDesk");
             HelpDesk.placeItem(factory.FactoryMethod("Bp machine"));
             HelpDesk.placeItem(factory.FactoryMethod("Heart machine"));
-            HelpDesk.placeItem(factory.FactoryMethod("ClipBoard"));
+            HelpDesk.placeItem(factory.FactoryMethod("Clipboard"));
             HelpDesk.placeItem(factory.FactoryMethod("Stethescope"));
-            HelpDesk.placeItem(factory.FactoryMethod("Defibrilator"));
+            HelpDesk.placeItem(factory.FactoryMethod("defibrillator"));
 
             // placing the items in check up room
             Rooms Check_up_Room  = new Rooms("Check_up_Room");
-            Check_up_Room.placeItem(factory.FactoryMethod("BP machine"));
-            Check_up_Room.placeItem(factory.FactoryMethod("ClipBoard"));
+            Check_up_Room.placeItem(factory.FactoryMethod("Bp machine"));
+            Check_up_Room.placeItem(factory.FactoryMethod("Clipboard"));
             Check_up_Room.placeItem(factory.FactoryMethod("Stethescope"));
 
             // placing the items in doctor room
@@ -81,17 +81,17 @@ namespace Hospital_Escape
 
             // placing the items in emergency room.
             Rooms Emergency_room = new Rooms("Emergency_Room");
-            Emergency_room.placeItem(factory.FactoryMethod("BP machine"));
+            Emergency_room.placeItem(factory.FactoryMethod("Bp machine"));
             Emergency_room.placeItem(factory.FactoryMethod("Heart machine"));
             Emergency_room.placeItem(factory.FactoryMethod("ClipBoard"));
             Emergency_room.placeItem(factory.FactoryMethod("Stethescope"));
-            Emergency_room.placeItem(factory.FactoryMethod("Defibrilator"));
+            Emergency_room.placeItem(factory.FactoryMethod("defibrillator"));
 
             // placing the items in cafe room
             Rooms Cafe_room = new Rooms("Cafe_Room");
-            Cafe_room.placeItem(factory.FactoryMethod("Soda"));
-            Cafe_room.placeItem(factory.FactoryMethod("Lunch"));
-            Cafe_room.placeItem(factory.FactoryMethod("Desert"));
+ //           Cafe_room.placeItem(factory.FactoryMethod("Soda"));
+ //           Cafe_room.placeItem(factory.FactoryMethod("Lunch"));
+  //          Cafe_room.placeItem(factory.FactoryMethod("Desert"));
 
             outside.setExit("North", HelpDesk);
             rooms.Add(outside);

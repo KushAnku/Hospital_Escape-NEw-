@@ -10,7 +10,7 @@ namespace Hospital_Escape
     public class Rooms : Observer
     {
         private Dictionary<string, Rooms> exit;
-        private Dictionary<String, int> items;
+        private Dictionary<String, Item> items;
         // this dictionary will be storing all the exit points for the nurse to leave the room.
         private List<Patient> _patients = new List<Patient>();
 
@@ -48,7 +48,7 @@ namespace Hospital_Escape
             {
                 Items[key] = 0;
             }
-            items = new Dictionary<string, int>();
+            items = new Dictionary<string, Item>();
         }
 
         public void setExit(string exitName, Rooms room)
@@ -86,33 +86,20 @@ namespace Hospital_Escape
             return exitNames;
         }
 
-        public bool getItem(String item)
+        public Item getItem(String item)
         {
-            int temp;
-            if (items.TryGetValue(item, out temp))
+            Item temp;
+            items.TryGetValue(item, out temp);
+            if (temp != null)
             {
-                if (items[item] > 0)
-                {
-                    items[item] -= 1;
-                    return true;
-                }
-
+                items.Remove(item);
             }
-
-            return false;
+            return temp;
         }
 
         public void placeItem(Item item)
         {
-            String itemName = item.Name;
-            if (items.ContainsKey(itemName))
-            {
-                items[itemName] += 1;
-            }
-            else
-            {
-                items.Add(itemName, 1);
-            }
+            items.Add(item.Name.ToLower(), item);
         }
 
         // it's description about what is going on in the particular room.
@@ -123,12 +110,10 @@ namespace Hospital_Escape
 
             // it's mentioning the items in the room. 
             str += ". \n --- " + "Room Items : ";
-            foreach (KeyValuePair<String, int> entry in items)
+            foreach (KeyValuePair<String, Item> entry in items)
             {
-                if (entry.Value>0)
-                {
-                    str += "\n------------------" + entry.Key + " = " + entry.Value + "\n ";
-                }
+                    str += "\n------------------" + entry.Value.Name+"\n ";
+
             }
 
             return str;

@@ -15,7 +15,7 @@ namespace Hospital_Escape
             public bool Execute(Nurse nurse)
         {
             if (this.hasSecondWord() &&
-                this.SecondWord == "Patient")
+                this.SecondWord.ToLower() == "patient")
             {
                 bool result = nurse.save();
             }

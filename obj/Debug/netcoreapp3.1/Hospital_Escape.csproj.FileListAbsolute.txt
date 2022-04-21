@@ -1,0 +1,14 @@
+D:\New folder\Hospital_Escape-NEw-\obj\Debug\netcoreapp3.1\Hospital_Escape.csproj.AssemblyReference.cache
+D:\New folder\Hospital_Escape-NEw-\obj\Debug\netcoreapp3.1\Hospital_Escape.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder\Hospital_Escape-NEw-\obj\Debug\netcoreapp3.1\Hospital_Escape.AssemblyInfoInputs.cache
+D:\New folder\Hospital_Escape-NEw-\obj\Debug\netcoreapp3.1\Hospital_Escape.AssemblyInfo.cs
+D:\New folder\Hospital_Escape-NEw-\obj\Debug\netcoreapp3.1\Hospital_Escape.csproj.CoreCompileInputs.cache
+D:\New folder\Hospital_Escape-NEw-\bin\Debug\netcoreapp3.1\Hospital_Escape.exe
+D:\New folder\Hospital_Escape-NEw-\bin\Debug\netcoreapp3.1\Hospital_Escape.deps.json
+D:\New folder\Hospital_Escape-NEw-\bin\Debug\netcoreapp3.1\Hospital_Escape.runtimeconfig.json
+D:\New folder\Hospital_Escape-NEw-\bin\Debug\netcoreapp3.1\Hospital_Escape.runtimeconfig.dev.json
+D:\New folder\Hospital_Escape-NEw-\bin\Debug\netcoreapp3.1\Hospital_Escape.dll
+D:\New folder\Hospital_Escape-NEw-\bin\Debug\netcoreapp3.1\Hospital_Escape.pdb
+D:\New folder\Hospital_Escape-NEw-\obj\Debug\netcoreapp3.1\Hospital_Escape.dll
+D:\New folder\Hospital_Escape-NEw-\obj\Debug\netcoreapp3.1\Hospital_Escape.pdb
+D:\New folder\Hospital_Escape-NEw-\obj\Debug\netcoreapp3.1\Hospital_Escape.genruntimeconfig.cache

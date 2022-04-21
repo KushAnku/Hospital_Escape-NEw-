@@ -9,7 +9,7 @@ namespace Hospital_Escape
     // using dictionary beacuse it's type of collection that is used to hold key/value pairs.
     public class Nurse : subject
     {
-        public Dictionary<string, int> items = new Dictionary<string, int>();
+        public Dictionary<string, Item> items = new Dictionary<string, Item>();
         private List<Rooms> list = new List<Rooms>();
         private List<Rooms> observers = new List<Rooms>();
     
@@ -29,102 +29,47 @@ namespace Hospital_Escape
 
         private Rooms entrance;
 
+        public int brownies;
+
         public Nurse (Rooms room)
         {
             currentRoom = room;
             entrance = room;
             list.Add(room);
-            foreach(string key in Game.items)
-            {
-                items[key] = 0;
-            }
+
         }
 
         public void giveBrownie()
         {
-            items["Brownie points"] += 1;
+            brownies += 1;
         }
 
         // using swtich statement for items.
-        public bool pickUpItem(Item item)
+        public bool pickUpItem(String itemName)
         {
-            String itemName = item.Name;
-            switch (itemName)
+            Item item = currentRoom.getItem(itemName.ToLower());
+            if (item != null)
             {
-                case "Stethescope":
-                    if (currentRoom.getItem("Stethescope"))
-                    {
-                        items["Stethescope"] += 1;
-                        return true;
-                    }
-                    break;
-                case "BP machine":
-                    if (currentRoom.getItem("BP machine"))
-                    {
-                        items["BP machine"] += 1;
-                        return true;
-                    }
-                    break;
-                case "Heart machine":
-                    if (currentRoom.getItem("Heart machine"))
-                    {
-                        items["Heart machine"] += 1;
-                        return true;
-                    }
-                    break;
-                case "Brownie points":
-                    if (currentRoom.getItem("Brownie points"))
-                    {
-                        items["Brownie points"] += 1;
-                        return true;
-                    }
-                    break;
-                case "ClipBoard":
-                    if (currentRoom.getItem("ClipBoard"))
-                    {
-                        items["Clipboard"] += 1;
-                        return true;
-                    }
-                    break;
-                case "defibrilator":
-                    if (currentRoom.getItem("Defibrilator"))
-                    {
-                        items["Defibrilator"] += 1;
-                        return true;
-                    }
-                    break;
+                items.Add(item.Name, item);
+                Console.WriteLine("picked up"+ item.Name);
             }
+            else
+            Console.WriteLine("Could not find item " + item.Name);
             return false;
 
         }
         // inventory for the items.
         // branching up the items. 
 
-        public int checkInventory(String item)
-        { 
-            switch (item)
+        public bool checkInventory(String itemName)
+        {
+            Item item = null;
+            items.TryGetValue(itemName, out item);
+            if(item!= null)
             {
-                case "Stethescope":
-                    return items["Stethescope"];
-                    break;
-                case "BP machine":
-                    return items["BP machine"];
-                    break;
-                case "Heart machine":
-                    return items["Heart machine"];
-                    break;
-                case "Brownie points":
-                    return items["Brownie points"];
-                    break;
-                case "Clipboard":
-                    return items["Clipboard"];
-                    break;
-                case "Defibrilator":
-                    return items["Defibrilator"];
-                    break;
-                default:
-                    return -1;
+                return true;
             }
+            return false;
         }
 
         public String getInventory()
@@ -132,12 +77,12 @@ namespace Hospital_Escape
             String output = "";
             output += "max Weight: " + _maxWt + "\n";
             output += "max Volume: " + _maxVol + "\n";
-            output += "current Weight: " + _currWt + "\n";
+            output += "current Weight: " + _currWt + "\n"; 
             output += "current Volume: " + _currVol + "\n";
             //add current weight and volume
-            foreach (KeyValuePair<String, int> entry in items)
+            foreach (KeyValuePair<String, Item> entry in items)
             {
-                output += entry.Key + ": " + entry.Value.ToString() + "\n";
+                output += entry.Key;
             }
             return output;
         }
@@ -205,10 +150,10 @@ namespace Hospital_Escape
         // creating the save method to save the patient.
         public bool save()
         {
-            if (checkInventory("Stethescope")>0   || 
+            if (/*checkInventory("Stethescope")>0   || 
                 checkInventory("BP machine")>0    || 
                 checkInventory("Heart machine")>0 || 
-                checkInventory("Defibrilator")>0)           
+                checkInventory("Defibrilator")>0 */ true  )     
             {
                 bool success = this.currentRoom.trySavePatient();
                 if (success)

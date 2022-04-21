@@ -24,7 +24,7 @@ namespace Hospital_Escape
                 if (this.hasSecondWord() && this.SecondWord == "( Lunch ( Soda, desert ) ")
                 {
                     // to take the item.
-                    nurse.k_takeItem = new TakeLunch(nurse);
+                    //nurse.k_takeItem = new TakeLunch(nurse);
                     bool result = nurse.buyItem();
                 }
                 else
