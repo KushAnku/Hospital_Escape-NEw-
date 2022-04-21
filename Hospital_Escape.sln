@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hospital_Escape", "Hospital_Escape.csproj", "{D12CEBAA-5A7B-41CC-9B17-68671F05B358}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A3779627-A628-417B-B99B-56C41188D871}"
+	ProjectSection(SolutionItems) = preProject
+		backcommand.cs = backcommand.cs
+		observer.cs = observer.cs
+		Rooms.cs = Rooms.cs
+		subject.cs = subject.cs
+		takeItems.cs = takeItems.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D12CEBAA-5A7B-41CC-9B17-68671F05B358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D12CEBAA-5A7B-41CC-9B17-68671F05B358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D12CEBAA-5A7B-41CC-9B17-68671F05B358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D12CEBAA-5A7B-41CC-9B17-68671F05B358}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F62601E5-8E55-4E85-A104-807B102E7C26}
+	EndGlobalSection
+EndGlobal
